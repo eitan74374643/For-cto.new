@@ -16,7 +16,8 @@ All three agents are trained as separate LoRA adapters and then merged into a un
 
 - ✅ **Fully Autonomous** - Run once and let it complete the 15-day training
 - ✅ **Auto-Resume** - Crashes? No problem! Automatic checkpoint recovery
-- ✅ **Cross-Platform** - Works on Google Colab (Free Tier) AND Local PC
+- ✅ **4-Hour Safety Timer** - Perfect for Kaggle! Auto-saves and exits before session timeout
+- ✅ **Cross-Platform** - Works on Kaggle, Google Colab (Free Tier) AND Local PC
 - ✅ **Zero Data Loss** - Saves after every sample during dataset generation
 - ✅ **Smart GPU Management** - Auto cleanup to prevent OOM errors
 - ✅ **GGUF Export** - Final model optimized for deployment (~4GB)
@@ -51,16 +52,34 @@ Generated Structure:
 
 ## 🚀 Quick Start
 
-### Option 1: Google Colab (Free Tier)
+### Option 1: Kaggle (Recommended for Free GPU)
 
 ```python
-# 1. Upload all 8 files to Colab
+# 1. Upload files to Kaggle notebook
 
 # 2. Install dependencies
 !pip install -r requirements.txt
 
-# 3. Run the master controller
-!python 0_master_controller.py
+# 3. Run with 8-hour safety timer (safe for Kaggle sessions)
+!python 0_master_controller.py 8
+```
+
+The system will:
+- ✅ Auto-detect Kaggle environment
+- ✅ Save all data to `/kaggle/working/` (persists between sessions)
+- ✅ Auto-save and exit before session timeout
+- ✅ Resume from last checkpoint on next run
+
+### Option 2: Google Colab (Free Tier)
+
+```python
+# 1. Upload all files to Colab
+
+# 2. Install dependencies
+!pip install -r requirements.txt
+
+# 3. Run with 4-hour safety timer (safe for Colab)
+!python 0_master_controller.py 4
 ```
 
 The system will:
@@ -69,7 +88,7 @@ The system will:
 - ✅ Save all data to Drive (survives session restarts)
 - ✅ Resume from last checkpoint if interrupted
 
-### Option 2: Local PC
+### Option 3: Local PC
 
 ```bash
 # 1. Clone or download all files
