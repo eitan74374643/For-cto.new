@@ -1,0 +1,2 @@
+# For running generated games locally
+pygame
