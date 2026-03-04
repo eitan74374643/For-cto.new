@@ -1,0 +1,19 @@
+{
+  "name": "threejs-grid-world",
+  "version": "1.0.0",
+  "description": "A Three.js 3D world with low-poly grid playground, Player block, and AI Agent",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve . -p 8080",
+    "dev:bun": "bunx serve . -p 8080"
+  },
+  "keywords": [
+    "threejs",
+    "3d",
+    "grid",
+    "game"
+  ],
+  "author": "",
+  "license": "MIT"
+}
